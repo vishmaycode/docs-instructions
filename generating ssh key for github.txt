@@ -1,0 +1,6 @@
+generating ssh key
+
+ssh-keygen -t ed25519 -C "your_email@example.com"       // uefi if supported that algorithm
+
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"   // if legacy system or windows 
+

@@ -1,0 +1,25 @@
+I've found the solution for that. Actually, ParrotOS uses different files for source package links. 
+If you open and see the file in sources.list by typing /etc/apt/sources.list everything is commented and there are no deb or deb-src links in it. All the links are stored separately in the sources.list.d folder see the files in it by typing 
+
+ls /etc/apt/sources.list.d 
+
+there exists a file for each source package. First change to root user.If you want to add new src link, 
+
+you have to create a new file in that folder <name>.list and add the link to it. 
+Suppose if you want to add vs-code to the sources.list, 
+
+then create a file named vscode.list in sources.list.d directory 
+
+and add the link deb http://packages.microsoft.com/repos/vscode stable main to it. 
+
+Finally update by doing sudo apt update and then install sudo apt install <package-name>. For the vscode example use sudo apt install code.
+
+Remove balena etcher
+
+
+sudo apt-get remove balena-etcher-electron
+sudo rm /etc/apt/sources.list.d/balena-etcher.list
+sudo apt-get update
+
+
+

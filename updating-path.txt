@@ -1,0 +1,2 @@
+cd /etc then open enviromet file using leafpad and update it with the personal address of the dir u wanna edit to 
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games path.txt

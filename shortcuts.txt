@@ -1,0 +1,43 @@
+calc                        -> calculator
+browser                     -> browser (firefox)
+home                        -> file manager
+quit(mail button)           -> shutdown
+
+alt + enter                 -> terminal
+mod + s                     -> settings(control center)
+mod + m                     -> texteditor
+mod + t                     -> telegram
+mod + x                     -> vscodium
+mod + c                     -> chromium
+mod + v                     -> vivaldi browser
+mod + b                     -> brave browser
+
+# workspace 
+shift + F1                  -> workspace 1
+shift + F2                  -> workspace 2
+ctrl + alt + left           -> workspace to left
+ctrl + alt + right          -> workspace to right
+
+# windows switching
+alt + tab                   -> switch bet windows 
+alt + ~                     -> switch bet windows of same application
+
+
+# screenshots
+printscr                    -> screenshot
+alt + printscr              -> croped screenshot
+
+
+# window tiling
+F9                          -> minimize one by one
+F10                         -> toggle maximize
+F11                         -> toggle fullscreen
+
+alt + left                  -> tile left
+alt + right                 -> tile right
+
+alt + ctrl + up             -> left up
+alt + ctrl + down           -> left down
+
+alt + mod + up              -> right up
+alt + mod + down            -> right down

@@ -1,0 +1,20 @@
+to install new display managers
+
+sudo apt install gdm3 
+
+others:- lightdm xdm slim ssdm lxdm
+
+select the default dm while installing
+
+
+to check default display manager
+
+cat /etc/X11/default-display-manager
+
+
+
+to reconfigure
+
+sudo dpkg-reconfigure lightdm
+
+then select

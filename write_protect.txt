@@ -1,0 +1,4 @@
+
+command to make any drive readonly free
+
+sudo hdparm -r0 /dev/sdb1

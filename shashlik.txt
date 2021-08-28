@@ -1,0 +1,17 @@
+sudo dpkg -i shashlik_0.9.3.deb
+
+go online and find x86 apk
+
+/opt/shashlik/bin/shashlik-install name_of_apk_file --------to install
+
+/opt/shashlik/bin/shashlik-run name_of_splash_png name_of_apk_file  -----to run
+
+One important thing to note at this point is that during the installation, Shashlik has created and stored some required files in /.local/share/shashlik. Those files include the splash png image file and the userdata.img. Upon launching an APK, Shashlik looks for the file you have indicated in the command. So, if there is a splash.png corresponding to an application named test.apk, the command becomes: “/opt/shashlik/bin/shashlik-run splash test.apk”
+
+uninstall
+
+As there is currently no uninstall function implemented, you can manually remove the binaries installed by Shashlik by navigating to /.local/share/applications and deleting the corresponding files. This should remove them from your applications menu.
+
+landscape
+
+The case of setting the emulator to the landscape screen mode is a usual one, so here's how to do it. Open your file manager as administrator and navigate to /opt/shashlik/bin and open “shashlik.run with your favorite text editor. Then locate the “-noskin” argument and replace it with “-skin 480x320” or any other resolution in the standard ratios.

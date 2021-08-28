@@ -1,0 +1,26 @@
+text/FG - #A6A6A6
+BG		- #000000
+bold 	- #B7B7B7
+
+trans 	- 20%
+
+color palatte
+
+#000000		#FF5252		#889BFF		#757575		#6FB4FF		#EB6AFF		#A4FF71		#FF5252
+
+#2E3436		#FF5252		#889BFF		#757575		#6FB4FF		#EB6AFF		#A4FF71		#A4FF71
+
+show bold text in colors
+
+-----------------------------------------------------
+
+monospace bold
+
+155		30
+
+1.05 	1.0
+
+allow blinking text
+
+underline - blinking
+
