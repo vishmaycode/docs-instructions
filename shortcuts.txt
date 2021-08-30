@@ -3,14 +3,19 @@ browser                     -> browser (firefox)
 home                        -> file manager
 quit(mail button)           -> shutdown
 
-alt + enter                 -> terminal
+mod + enter                 -> terminal
 mod + s                     -> settings(control center)
-mod + m                     -> texteditor
+mod + n                     -> texteditor
 mod + t                     -> telegram
+
 mod + x                     -> vscodium
 mod + c                     -> chromium
 mod + v                     -> vivaldi browser
 mod + b                     -> brave browser
+
+mod + q                     -> search file etc
+mod + a                     -> panel main menu
+mod + z                     -> Run Applications
 
 # workspace 
 shift + F1                  -> workspace 1
