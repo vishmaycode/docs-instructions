@@ -1,0 +1,11 @@
+open the settings of the browser(chromium) and go to add search engine and add
+
+google
+
+g
+
+http://www.google.com/search?q=%s
+
+
+
+on firefox its simple just right click on the magnifing glass when you are on google homepage pr go to linux mint website and there will be how to add a artical regarding how to add commercial web search engine
