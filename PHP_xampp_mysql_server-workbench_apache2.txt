@@ -1,0 +1,80 @@
+PHP
+
+sudo apt install php
+
+
+
+XAMPP
+
+downlod the xampp****.run file from the official website 
+and run on terminal and it will autometically install the xampp software 
+
+will be present in 
+/opt/lampp
+
+on browser 
+localhost/dashboard
+localhost/myphpadmin
+
+php files will be available on 
+/opt/lampp/htdocs
+
+
+
+
+OR  
+
+
+
+My sql
+
+sudo apt install mysql-server
+sudo mysql_secure_installation          // complete the process
+
+
+to run mysql on terminal 
+
+sudo mysql -u root(username) -p
+
+
+setting mysql for workbench
+
+download workbench deb file and install from official website
+then open terminal 
+
+1)
+sudo mysql -u root -p 
+use mysql
+SELECT User,Host,Plugin FROM mysql.user;
+UPDATE user SET plugin='mysql_native_password' WHERE User='root';
+FLUSH privileges;
+exit;
+sudo service mysql restart
+
+2)
+sudo mysql -u root -p 
+use mysql
+CREATE USER 'name'@'localhost' IDENTIFIED BY '';
+GRANT ALL PREVILEGES ON *.* TO 'name'@'localhost';
+UPDATE User SET Plugin='auth_socket' WHERE User='name';
+FLUSH privileges;
+exit;
+sudo service mysql restart;
+
+
+and then you can connect to database by running workbench in sudo
+
+sudo sql-workbench %f
+
+
+
+
+apache2
+
+sudo apt install apache2
+sudo service apache2 start/stop/restart
+
+files will be available at
+/var/www something
+
+check by searching localhost on browser
