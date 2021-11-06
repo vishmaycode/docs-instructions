@@ -1,0 +1,24 @@
+how to have multiple firefox runing at a same time
+
+
+download any version of firefox from their website
+
+unzip the tar file
+
+tar -zxvf firefox-93.0.tar.bz2
+
+then rename folder
+
+mv firefox firefox-93.0
+
+make a backup of your firefox profile
+
+cp -r /home/master/.mozilla /home/master/.mozilla3
+
+create a new profile so you dont currupt old profile
+
+firefox -CreateProfile "firefox-93.0 /home/master/.mozilla/firefox/firefox-93.0"
+
+run this line to run new instance of firefox
+
+/home/master/Downloads/firefox-93.0/firefox -no-remote -P firefox-93.0
