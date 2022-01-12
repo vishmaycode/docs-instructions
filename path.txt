@@ -1,0 +1,1 @@
+cd /etc then open enviromet file using leafpad and update it with the personal address of the dir u wanna edit to path
