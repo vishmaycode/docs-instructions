@@ -1,0 +1,66 @@
+apache2 configure
+
+# install debian with webserver(apache2) and sshserver
+sudo apt update
+sudo apt upgrade
+
+sudo apt install apache2
+
+
+
+# create the websites folder from where the websites are to be shown
+cd /var/www
+sudo mkdir -p websiteOne.com/public_html 
+sudo mkdir -p websiteTwo.com/public_html
+
+
+# change the permission so the public_html folder so they can be edited
+sudo chown -R $USER:$USER websiteOne.com/public_html/
+sudo chown -R $USER:$USER websiteTwo.com/public_html/
+
+
+# copy contents into the public_html folders of the two websites(preferably index.html file)
+cp source destination 
+
+
+# now setup configuration of those two websites
+1. copy default config
+sudo cp /etc/apache2/sites-available/000-default.conf /etc/apache2/sites-available/websiteOne.com.conf
+
+2. edit config of new site
+sudo nano /etc/apache2/sites-available/websiteOne.com.conf
+
+""
+	ServerAdmin webmaster@websiteOne.com
+        DocumentRoot /var/www/websiteOne.com/public_html
+        ServerName websiteOne.com
+        ServerAlias www.websiteOne.com
+""
+
+3. do the same for other sites
+
+
+# enable new configs and disable default config
+cd /etc/apache2/sites-available
+sudo a2ensite websiteOne.com.conf
+sudo a2ensite websiteTwo.com.conf
+
+sudo a2dissite 000-default.conf
+
+
+
+# to find the internal ip of the server
+hostname -I | awk '{print $1}'
+
+
+# update entries in hostfile
+sudo nano /etc/hosts
+
+""
+10.0.2.15	websiteOne.com
+10.0.2.15	websiteTwo.com
+""
+
+
+# restart apache2
+sudo service apache2 restart
