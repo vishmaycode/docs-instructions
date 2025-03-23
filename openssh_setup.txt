@@ -1,0 +1,13 @@
+ssh server
+
+sudo apt install openssh-server
+sudo systemctl enable ssh / sshd
+sudo systemctl start ssh / sshd
+sudo systemctl status ssh / sshd
+
+
+allow in firewall
+
+sudo ufw allow ssh
+sudo ufw enable
+sudo ufw status
