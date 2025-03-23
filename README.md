@@ -1,3 +1,3 @@
-# Instructions for personal use
+# Instructions
 
-Personal instructions guide files
+Personal instructions guide files for some application or configs
