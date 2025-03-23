@@ -1,9 +1,0 @@
-git remote add upstream anything.git
-
-git fetch upstream
-
-git rebase upstream/master
-
-or git merge upstream from master using git checkout master
-
-git push
