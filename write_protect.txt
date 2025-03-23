@@ -2,3 +2,12 @@
 command to make any drive readonly free
 
 sudo hdparm -r0 /dev/sdb1
+
+
+read only pendrive
+https://askubuntu.com/questions/826425/cannot-copy-to-usb-every-usb-stick-is-read-only-16-04
+
+df -Th
+find /dev/sda1 -type f -exec chmod 666 {} \;
+or 
+find /dev/sda1 -type f -exec chmod 644 {} \;
