@@ -1,1 +1,0 @@
-add alias pyc=path to the executabe file and add it in dot bashrc file
