@@ -1,0 +1,37 @@
+openvpn
+
+
+I've just hit the same issue using IP-Vanish after having done a clean install of 22.04 after using 20.04 successfully for a long time.
+
+I have tried both solutions, putting the lines in the top of the /etc/ssl/openssl.cnf file (copy/pasted to make sure there were no typos), and also adding the additional tls-cipher (and even replacing it) in the .ovpn file, but neither is allowing me to connect.
+
+I've contacted IP-Vanish directly and included the information provided here.
+
+I'd be grateful if anyone manages to solve this issue, and if IP-Vanish come back to me with a reply, I'll post it up.
+
+UPDATE WITH SOLUTION:
+
+IP-Vanish have returned with a temporary solution until they can update their certificates.
+
+1: Add the VPN connection as normal using the Network Manager GUI
+
+2: Edit the connection file in /etc/NetworkManager/system-connections/(connectionname).nmconnection where (connectionname) is the name of your VPN conection
+
+3: In the [vpn] section, beneath the line that starts ca=, add a new line reading
+
+# tls-cipher=DEFAULT:@SECLEVEL=[0-5] here 0-5 is the range, use the below line for pasting
+tls-cipher=DEFAULT:@SECLEVEL=0
+
+See here for security level information, and to gather which security level you should be using. For most, security level 0 will be adequate.
+
+4: Save the file
+
+5: Enter the command sudo systemctl restart NetworkManager
+
+6: Start the VPN connection as normal and it should connect, make sure you dont edit connection via GUI, if you do then repeat the steps as the connection file will be overwritten.
+
+
+One more solutions was to change default gateway order
+route add default gw {IP-ADDRESS} {INTERFACE-NAME}
+route add default gw 192.168.1.254 eth0
+
