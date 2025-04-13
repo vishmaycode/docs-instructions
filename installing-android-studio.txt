@@ -1,8 +1,0 @@
-installing android studio 
-
-search android sudio on any search engin and download the
-latest zip or tar file for ur system
-
-unzip into the home folder and move to the bin
-
-android-studio/bin
