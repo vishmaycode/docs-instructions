@@ -1,8 +1,6 @@
 # git commands
 
--------------------------------------------------------------------------------------
-
-### In case you come across conflicts
+### Conflicts resolving
 
 ```shell
 git checkout branch (where you want to merge)
@@ -20,7 +18,7 @@ git push
 
 -------------------------------------------------------------------------------------
 
-### In case u merged something else on master
+### Master merge by mistake
 
  just reset to the previous tag
 ```shell
@@ -34,20 +32,27 @@ git push --force
 
 -------------------------------------------------------------------------------------
 
-
-### for deleting branches and pulling the master
+### Pull local branches which are ahead in repository
 
 ```shell
 git fetch -p
-
-for branch in $(git branch -vv | grep ': gone]' | sed '/*/{$q;h;d};$G' | tr -d '*' | awk '{print $1}'); do git branch -D $branch; done
 
 for branch in $(git branch -vv | grep ': behind ' | sed '/*/{$q;h;d};$G' | tr -d '*' | awk '{print $1}'); do git checkout $branch && git merge --ff-only || break ; done
 ```
 
 -------------------------------------------------------------------------------------
 
-### deleting branches on my team
+### Delete local branches which are deleted branches from repository
+
+```shell
+git fetch -p
+
+for branch in $(git branch -vv | grep ': gone]' | sed '/*/{$q;h;d};$G' | tr -d '*' | awk '{print $1}'); do git branch -D $branch; done
+```
+
+-------------------------------------------------------------------------------------
+
+### Deleting branches locally
 
 ```shell
 git fetch -p
@@ -57,7 +62,7 @@ git branch --merged | egrep -v "(^\*|master)"  | xargs git branch -d
 
 -------------------------------------------------------------------------------------
 
-### for checking if any conflict is left
+### Check conflicts
 
 ```shell
 grep -rl --exclude-dir={'specs','tmp'} --include=*.{php,js,tpl,html,css}  --color  'axios'
@@ -67,10 +72,13 @@ grep -rl --exclude-dir={'public','node_modules'} --include=*.{js,html,css,scss,j
 
 -------------------------------------------------------------------------------------
 
-### In case your git asks you to authenticate again n again
+### Change HTTP to SSH
 
 ```shell
 git remote -v
+```
+and you shall see the output as below
+```shell
 origin  https://gitlab.com/vishmaycode/vishmaycode.git (fetch)
 origin  https://gitlab.com/vishmaycode/vishmaycode.git (push)
 ```
