@@ -3,9 +3,7 @@
 ```shell
 sudo apt install gdm3
 ```
-
-### others:- lightdm xdm slim ssdm lxdm
- - select the default dm while installing
+#### others:- lightdm xdm slim ssdm lxdm
 
 
 ### to check default display manager
