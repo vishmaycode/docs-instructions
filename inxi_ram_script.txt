@@ -1,7 +1,0 @@
-x=`inxi -I`
-y=`inxi -D`
-echo "Processes     ${x:20:6}" | sed 's/:/:     /'
-echo "Memory        ${x#*used}" | sed 's/ Shell: bash inxi: 3.0.38 //' | sed 's/B/B          /' | sed 's/:/:     /'
-echo "Storage       ${y#*used}" | sed 's/%).*/%)/' | sed 's/B/B         /' | sed 's/:/:     /' | sed '/vendor/d'
-
-
