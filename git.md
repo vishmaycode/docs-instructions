@@ -1,92 +1,97 @@
-git commands
+# git commands
 
 -------------------------------------------------------------------------------------
 
-In case you come across conflicts
+### In case you come across conflicts
 
+```shell
 git checkout branch (where you want to merge)
 
 git fetch
-
 git pull
 
 git merge origin/branch (which you want to merge in currently checkout branch)
 
 git add .
-
 git commit -m "msg"
 
 git push
-
+```
 
 -------------------------------------------------------------------------------------
 
-In case u merged something else on master
+### In case u merged something else on master
 
-just reset to the previous tag
-
+ just reset to the previous tag
+```shell
 git reset --hard v22.10.01
+```
 
 then in GitHub web app allow force push to master branch in settings and
-
+```shell
 git push --force
+```
 
 -------------------------------------------------------------------------------------
 
 
-for deleting branches and pulling the master
+### for deleting branches and pulling the master
 
+```shell
 git fetch -p
 
 for branch in $(git branch -vv | grep ': gone]' | sed '/*/{$q;h;d};$G' | tr -d '*' | awk '{print $1}'); do git branch -D $branch; done
 
 for branch in $(git branch -vv | grep ': behind ' | sed '/*/{$q;h;d};$G' | tr -d '*' | awk '{print $1}'); do git checkout $branch && git merge --ff-only || break ; done
+```
 
 -------------------------------------------------------------------------------------
 
+### deleting branches on my team
 
-deleting branches on my team
-
+```shell
 git fetch -p
 
 git branch --merged | egrep -v "(^\*|master)"  | xargs git branch -d
+```
 
 -------------------------------------------------------------------------------------
 
-for checking if any conflict is left
+### for checking if any conflict is left
 
+```shell
 grep -rl --exclude-dir={'specs','tmp'} --include=*.{php,js,tpl,html,css}  --color  'axios'
 
 grep -rl --exclude-dir={'public','node_modules'} --include=*.{js,html,css,scss,jsx}  --color  'axios'
-
+```
 
 -------------------------------------------------------------------------------------
 
-in case your git asks you to authenticate again n again
+### In case your git asks you to authenticate again n again
 
-do this
-
+```shell
 git remote -v
 origin  https://gitlab.com/vishmaycode/vishmaycode.git (fetch)
 origin  https://gitlab.com/vishmaycode/vishmaycode.git (push)
+```
 
 then 
-
+```shell
 git remote set-url origin git@gitlab.com:vishmaycode/vishmaycode.git
+```
 
 then verify
-
+```shell
 ssh -T git@gitlab.com
-Welcome to GitLab, @vishmay1!
+```
 
-and done!
-if you don't have ssh keys added
-then do 
+-------------------------------------------------------------------------------------
 
+### Creating SSH keys
+
+```shell
 ssh-keygen -t ed25519 -C "your-email@example.com"
 eval "$(ssh-agent -s)"
 ssh-add ~/.ssh/id_ed25519
 cat ~/.ssh/id_ed25519.pub  (copy this and add in gitlab)
-
--------------------------------------------------------------------------------------
-
+```
