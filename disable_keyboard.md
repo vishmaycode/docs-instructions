@@ -1,32 +1,39 @@
-Disable keybaord
+# Disable keybaord
 
 - https://askubuntu.com/questions/160945/is-there-a-way-to-disable-a-laptops-internal-keyboard
 
+```shell
 sudo apt install xinput
+xinput list
+```
 
-xinput list 
  - to list devices
  - find "AT Translated Set 2 keyboard" and its id
  - also note slave keyboard number
-↳ AT Translated Set 2 keyboard            	id=17	[slave  keyboard (3)]
+ ↳ AT Translated Set 2 keyboard            	id=17	[slave  keyboard (3)]
 
 
-Disable it using 
+#### Disable it using 
+```shell
 xinput float <id#>
 xinput float 17
+```
 
-reenable it using 
+#### Re-enable it using
+```shell
 xinput reattach <id#> <master#>
 xinput reattach 17 3
+```
 
 
-___________ for the above functionality i have created a script _____________
+## for the above functionality i have created a script
 
+```shell
 nano ~/.keyboard.sh
 chmod 755 ~/.keyboard.sh
-
-contents 
 ```
+
+```shell
 #!/bin/bash
 
 MASTER_ID_FILE="/tmp/keyboard_master_id"
