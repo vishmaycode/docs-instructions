@@ -1,39 +1,51 @@
-neovim
+# Old neovim setup using kickstart
 
-https://github.com/nvim-lua/kickstart.nvim <-- for your next setup (very imp)
+# please refer to [https://github.com/vishmaycode/lazyvim-setup](https://github.com/vishmaycode/lazyvim-setup) for latest configs
 
-sudo apt install neovim (this installs old version) 0.7
+[https://github.com/nvim-lua/kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim) <-- for your next setup (very imp)
+
+
+### NVIM installation
+this installs old version = 0.7
+ ```shell
+sudo apt install neovim
+```
 
 so instead do (0.10):
+```shell
 wget https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
 chmod 775 nvim.appimage
 sudo mv nvim.appimage  /usr/local/bin/nvim
+```
 
+- Install python3-jedi
 
+### nvim config
+```shell
 mkdir -p .config/nvim/
 vim init.vim
-
-https://github.com/NeuralNine/config-files/blob/master/init.vim
+```
 
 with chagnes regarding keybindings
-
+[https://github.com/NeuralNine/config-files/blob/master/init.vim](https://github.com/NeuralNine/config-files/blob/master/init.vim)
 
 
 in command line
+```shell
 :PlugInstall - to install plugins
 :call coc#util#install() - to update coc plugin
 
-
 :CocInstall coc-python
+```
 
-also install python3-jedi
-
-
-# show git branch
+### show git branch
+```shell
 Plug 'https://github.com/tpope/vim-fugitive' " for git branch showing in airline
 let g:airline#extensions#branch#enabled = 1
+```
 
-# all coc plugins
+
+### all coc plugins
 
 coc-prettier
 coc-html
@@ -55,8 +67,9 @@ coc-cmake
 coc-clangd
 coc-snippets
 
-treesitter installation
+### treesitter installation
 
+```shell
 :TSUpdate
 
 :TSInstall bash c cpp
@@ -70,9 +83,11 @@ treesitter installation
 :TSInstall git_config git_rebase gitattributes gitcommit gitignore
 :TSInstall http ini java jsonc meson
 :TSInstall regex requirements scss tmux xml
+```
 
-######################################### coc-settings.json #########################################
 
+### coc-settings.json
+```shell
 {
   "snippets.ultisnips.pythonPrompt": false,
   "languageserver": {
@@ -85,10 +100,12 @@ treesitter installation
   "prettier.tabWidth": 4,
   "prettier.useTabs": false
 }
+```
 
-######################################### init.vim 
- #########################################
 
+#### init.vim 
+
+```shell
 syntax on
 
 set number
@@ -229,7 +246,6 @@ nnoremap <leader>fh :Telescope help_tags<CR>
 " Transparancy
 nnoremap <leader>tt :TransparentToggle <CR>
 
-
 lua << EOF
 	require('which-key').setup {}
 	require 'colorizer'.setup()
@@ -316,3 +332,4 @@ lua << EOF
     exclude_groups = {}, -- table: groups you don't want to be transparent
 })
 EOF
+```
