@@ -1,3 +1,4 @@
+```shell
 text/FG - #A6A6A6
 BG		- #000000
 bold 	- #B7B7B7
@@ -5,10 +6,9 @@ bold 	- #B7B7B7
 trans 	- 20%
 
 color palatte
-
 #000000		#FF5252		#889BFF		#757575		#6FB4FF		#EB6AFF		#A4FF71		#FF5252
-
 #2E3436		#FF5252		#889BFF		#757575		#6FB4FF		#EB6AFF		#A4FF71		#A4FF71
+```
 
 show bold text in colors
 
@@ -60,6 +60,7 @@ echo $blue this is blue $RED$black\This is black with red background $underline\
 
 Copy and paste this into your script:
 
+```shell
 bold=`echo -en "\e[1m"`
 underline=`echo -en "\e[4m"`
 dim=`echo -en "\e[2m"`
@@ -102,6 +103,6 @@ LIGHTPURPLE=`echo -en "\e[105m"`
 LIGHTAQUA=`echo -en "\e[106m"`
 WHITE=`echo -en "\e[107m"`
 DEFAULT=`echo -en "\e[49m"`
-
+```
 
 Edit: crashorbit created a fix that allows this to be used in for loops, and shortened the size. He also created a nice demo.
